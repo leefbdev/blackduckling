@@ -33,7 +33,7 @@ func executeScriptHandler(db *sql.DB) gin.HandlerFunc {
 		}
 
 		log.Printf("Cloning repository: %s", repoUrl)
-		tempDir, err := ioutil.TempDir("", "tempbd")
+		tempDir, err := ioutil.TempDir("", "temp")
 		if err != nil {
 			log.Printf("Failed to create temporary directory: %v", err)
 			c.String(500, fmt.Sprintf("Error occurred: %v", err))
@@ -70,10 +70,10 @@ func executeScriptHandler(db *sql.DB) gin.HandlerFunc {
 		}
 
 		detect_jar := "/Users/frankli/Downloads/synopsys-detect-9.8.0.jar"
-		bd_hub_url := "https://testing.blackduck.synopsys.com/"
-		bd_hub_token := "OTVkNTU0MmEtODk1OS00M2IwLThhZjQtNDAxOGY0ODQyNGRlOjY4NjMwMDY3LTc3N2UtNGI5Yy1hYTIyLTU2MTMzNDI4MGQyMA=="
+		bd_hub_url := "https://con10.blackduck.synopsys.com/"
+		bd_hub_token := "MDJjYWJlZWItZDIxYy00ZGE4LWI4YTktODYxNTA0Y2I3MmNjOmVkNDAzMTVkLTU4YjktNGQ5Ni05MzZjLTdlZDlkYWE0OGVmOQ=="
 		project_name := "test0_auto"
-		project_version := "test0_auto"
+		project_version := "test1_auto"
 
 		scriptPath = fmt.Sprintf("java -jar %s --blackduck.url=%s --blackduck.api.token=%s --detect.source.path=%s --detect.project.name=%s --detect.project.version.name=%s", detect_jar, bd_hub_url, bd_hub_token, tempDir, project_name, project_version)
 		log.Printf("Executing script: %s", scriptPath)
