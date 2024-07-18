@@ -71,7 +71,7 @@ func executeScriptHandler(db *sql.DB) gin.HandlerFunc {
 
 		detect_jar := "/Users/frankli/Downloads/synopsys-detect-9.8.0.jar"
 		bd_hub_url := "https://con10.blackduck.synopsys.com/"
-		bd_hub_token := "MDJjYWJlZWItZDIxYy00ZGE4LWI4YTktODYxNTA0Y2I3MmNjOmVkNDAzMTVkLTU4YjktNGQ5Ni05MzZjLTdlZDlkYWE0OGVmOQ=="
+		bd_hub_token := "=="
 		project_name := "test0_auto"
 		project_version := "test1_auto"
 
